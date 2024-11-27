@@ -1,9 +1,9 @@
 /* Basic styles */
 :root {
-    /* Define color variables */
-    --main-color: #2d2d2d;         /* Dark gray */
-    --background-color: #ffffff; /* Light gray */
-    --footer-color: #3f3f3f; /* Light gray */
+
+    --main-color: #2d2d2d;         
+    --background-color: #ffffff; 
+    --footer-color: #3f3f3f; 
 }
 
 
@@ -75,7 +75,6 @@ img {
     height: 70px;
 
     display: flex;
-    /* padding: 20px 42px; */
     justify-content: space-between;
     align-items: center;
     align-content: center;
@@ -105,9 +104,7 @@ img {
 
 /* Section General Styles */
 .content {
-    /* max-width: 1200px; */
     margin: 0 auto;
-    /* padding: 2rem; */
     padding: 0px 370px;
 }
 
@@ -125,7 +122,6 @@ img {
 
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     gap: 88px;
     align-self: stretch;
@@ -135,7 +131,6 @@ img {
 
 .about-container {
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 115px 0 0 0;
@@ -242,10 +237,10 @@ img {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Две колонки */
-    grid-template-rows: repeat(2, auto);  /* Две строки */
-    gap: 149px; /* Зазор между элементами */
-    justify-content: center; /* Центрирование контента */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(2, auto);  
+    gap: 149px; 
+    justify-content: center; 
     margin-top: 75px;
 }
 
@@ -342,7 +337,7 @@ img {
 
 .projects-grid {
     display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Увеличен минимальный размер */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 2rem;
     flex-direction: column;
 }
@@ -368,20 +363,8 @@ img {
     align-self: stretch;   
 }
 
-.project-grid-top .project-item:first-child .project-image {
-    border-radius: 25px 0 0 0;
-}
-
-.project-grid-top .project-item:last-child .project-image {
-    border-radius: 0 25px 0 0;
-}
-
-.project-grid-bottom .project-item:first-child .project-image {
-    border-radius: 0 0 0 25px;
-}
-
-.project-grid-bottom .project-item:last-child .project-image {
-    border-radius: 0 0 25px 0;
+.project-image {
+    border-radius: 25px;
 }
 
 
@@ -407,10 +390,10 @@ img {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    line-height: 1.5; /* Высота строки для 4 строк текста */
-    overflow: hidden; /* Обрезка текста */
+    line-height: 1.5; 
+    overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* Ограничение текста до 4 строк */
+    -webkit-line-clamp: 4; 
     -webkit-box-orient: vertical;
 }
 
@@ -789,18 +772,194 @@ img {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .about-container,
-    .contact-container {
-        flex-direction: column;
+@media screen and (max-width: 768px) {
+
+    .block-nav {
+        padding: 0 20px;
     }
 
-    .projects-grid {
-        flex-direction: column;
+    .nav-right a {
+        margin-left: 0;
+    }
+
+    .nav-right {
+        gap: 20px;
+        display: flex;
+    }
+
+    
+    .content, .footer {
+        padding: 0 20px;
+    }
+
+    
+    .content-nav {
+        align-items: flex-start; 
+        row-gap: 10px; 
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+
+    }
+
+    
+    .about-section {
+        height: auto; 
+        gap: 40px; 
+    }
+
+    .about-container {
+        flex-direction: column; 
+        align-items: center;
+        gap: 40px;
+        margin-top: 40px;
     }
 
     .about-image {
+        display: flex;
+        justify-content: center;
+    }
+
+    .profile-image {
+        width: 90%;
+    }
+            
+    .about-image .profile-image {
+        width: 90%; 
+        height: auto;
+        border-radius: 25px; 
+    }
+
+    .projects-section, .services-section {
+        margin-top: 100px;
+    }
+
+   
+    .services-grid {
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+    }
+
+    .service-item {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
         text-align: center;
     }
-}
 
+    .service-icon {
+        width: 80px; 
+        height: 80px;
+    }
+
+    .service-title, .service-description {
+        text-align: center; 
+    }
+
+    
+    .view-all-link {
+        text-decoration: underline;
+    }
+
+    .projects-grid {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .project-grid-top, .project-grid-bottom {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .project-item img {
+        height: auto; 
+        width: 100%;
+    }
+
+    .project-text a {
+        text-decoration: underline;
+    }
+
+    /* Отзывы (Testimonials) */
+    .testimonial-section {
+        gap: 20px; 
+    }
+
+    .testimonial {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .testimonial-author {
+        flex-direction: column; 
+        text-align: left; 
+    }
+
+    .testimonial-image {
+        margin: 0;
+    }
+
+
+    .contact-container {
+        flex-direction: column; 
+        gap: 40px;
+    }
+
+    .contact-text {
+        text-align: left;
+        width: 100%;
+    }
+
+    .form-input, .form-input-textarea {
+        max-width: 100%; 
+        width: 100%;
+        min-width: 0px;
+    }
+
+    .footer .section-title {
+        text-align: center; 
+    }
+
+    .credits[data-tooltip]:before {
+        left: 73px;
+    }
+
+    .credits[data-tooltip]:hover:before,
+    .credits[data-tooltip]:hover:after,
+    .credits.tooltip-visible:before,
+    .credits.tooltip-visible:after {
+        visibility: visible;
+        opacity: 1;
+        transition-delay: 0s; 
+    }
+    
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; 
+    }
+
+    
+    * {
+        box-sizing: border-box; 
+    }
+
+    
+    .container, .content, .footer, .header {
+        max-width: 100%; 
+        overflow-x: hidden; 
+    }
+
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    p, h1, h2, h3, h4, h5, h6 {
+        word-wrap: break-word; 
+        overflow-wrap: break-word;
+    }
+
+
+}

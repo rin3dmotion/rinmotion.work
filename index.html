@@ -224,9 +224,13 @@
             </footer>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const navbar = document.querySelector(".block-nav");
+document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector(".block-nav");
 
+    const updateNavbarShadow = () => {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+            navbar.classList.add("shadow");
+        } else {
             window.addEventListener("scroll", () => {
                 if (window.scrollY > 116) {
                     navbar.classList.add("shadow");
@@ -234,7 +238,42 @@
                     navbar.classList.remove("shadow");
                 }
             });
+
+            if (window.scrollY <= 116) {
+                navbar.classList.remove("shadow");
+            }
+        }
+    };
+
+    updateNavbarShadow();
+
+    window.addEventListener("resize", updateNavbarShadow);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const credits = document.querySelectorAll(".credits[data-tooltip]");
+
+    credits.forEach((credit) => {
+        credit.addEventListener("click", () => {
+            clearTimeout(credit.tooltipTimeout);
+
+            credit.classList.remove("tooltip-visible");
+
+            credit.tooltipTimeout = setTimeout(() => {
+                credit.classList.add("tooltip-visible");
+            }, 3000);
         });
+    });
+
+    document.addEventListener("click", (e) => {
+        credits.forEach((credit) => {
+            if (!credit.contains(e.target)) {
+                clearTimeout(credit.tooltipTimeout);
+                credit.classList.remove("tooltip-visible");
+            }
+        });
+    });
+});
 
     </script>     
 </body>
