@@ -33,7 +33,6 @@ a {
 }
 
 img {
-    max-width: 100%;
     height: auto;
     display: block;
 }
@@ -67,7 +66,7 @@ img {
 }
 
 .shadow {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 9px;
+    box-shadow: rgba(0, 0, 0, 0.48) 0px -3px 9px;
     transition: 0.1s; 
 }
 
@@ -303,10 +302,7 @@ img {
 .project-title-link {
     width: fit-content;
     cursor: pointer;
-}
-
-.project-title-link:hover {
-    text-decoration-line: underline;
+    text-decoration: underline;
 }
 
 .projects-section {
@@ -381,6 +377,26 @@ img {
     width: 100%;
     height: auto;
     margin-bottom: 25px;
+}
+
+.project-image {
+    border-radius: 3px;
+}
+
+.project-grid-top .project-item:first-child .project-image {
+    border-radius: 25px 3px 3px 3px;
+}
+
+.project-grid-top .project-item:last-child .project-image {
+    border-radius: 3px 25px 3px 3px;
+}
+
+.project-grid-bottom .project-item:first-child .project-image {
+    border-radius: 3px 3px 3px 25px;
+}
+
+.project-grid-bottom .project-item:last-child .project-image {
+    border-radius: 3px 3px 25px 3px;
 }
 
 .project-title {
@@ -560,10 +576,11 @@ img {
 }
 
 .form-input-name {
-    border-radius: 25px 25px 0px 0px;
+    border-radius: 25px 25px 3px 3px !important;
 }
 
 .form-input {
+    border-radius: 3px;
     display: flex;
     min-width: 320px;
     max-width: 520px;
@@ -598,8 +615,8 @@ img {
 }
 
 .form-input-textarea {
+    border-radius: 3px;
     height: 192px;
-
     display: flex;
     min-width: 520px;
     padding: 16px 24px;
@@ -655,7 +672,7 @@ img {
     justify-content: center;
     align-items: center;
     gap: var(--item-spacing-10, 10px);
-    border-radius: 0px 25px;
+    border-radius: 3px 25px;
     background: var(--color-white-solid, #FFF);
     color: #2D2D2D;
     text-align: center;
@@ -684,6 +701,7 @@ img {
     width: 31px;
     height: 31px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .contact-links-top, .contact-links-bottom {
@@ -770,6 +788,10 @@ textarea {
 
 /* Responsive Design */
 @media screen and (max-width: 1056px) {
+
+    img {
+        max-width: 100%;
+    }
 
      /* Navigation */
     .content, .footer, .block-nav {
@@ -877,7 +899,7 @@ textarea {
 
     /*Projects */
 
-    .project-image {
+    .project-grid-top .project-item:first-child .project-image, .project-grid-top .project-item:last-child .project-image, .project-grid-bottom .project-item:first-child .project-image, .project-grid-bottom .project-item:last-child .project-image  {
         border-radius: 25px;
     }
 
