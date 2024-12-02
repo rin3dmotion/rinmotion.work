@@ -308,7 +308,7 @@ img {
 .projects-section {
     display: flex;
     flex-direction: column;
-    margin-top: 180px;
+    margin-top: 110px;
     margin-bottom: 112px;
 }
 
@@ -523,10 +523,13 @@ img {
 }
 
 .contact-section {
-    padding: 55px 0px;
+    padding: 55px 0 0 0;
+    max-width: 1178px;
+    align-self: center;
 }
 
 .contact-container {
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
     gap: 115px;
@@ -729,7 +732,7 @@ img {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease-in-out; 
-    transition-delay: 3s; 
+    transition-delay: 1s; 
 }
 
 .credits[data-tooltip]:before {
@@ -767,7 +770,7 @@ img {
 .credits[data-tooltip]:hover:after {
     visibility: visible;
     opacity: 1;
-    transition-delay: 3s; 
+    transition-delay: 1s; 
 }
 
 textarea {
@@ -780,10 +783,15 @@ textarea {
     padding: 0px 370px;
     background-color: #333;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
 }
 
 .footer p {
     cursor: default;
+    max-width: 1178px;
+    align-self: center;
 }
 
 /* Responsive Design */
@@ -998,4 +1006,7 @@ textarea {
         text-align: center; 
     }
 
+    .credits[data-tooltip]::before {
+        margin-left: -28px;
+    }
 }
