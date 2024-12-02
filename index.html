@@ -209,14 +209,16 @@
                             </div>
                             
                         </div>
-                        <form action="#" class="contact-form">
+                        <form action="https://formspree.io/f/xgverzyr" method="POST" class="contact-form">
                             <div>
-                                <input type="text" name="name" placeholder="Name" class="form-input form-input-name">
-                                <input type="email" name="email" placeholder="Email" class="form-input">
-                                <textarea name="message" placeholder="Message" class="form-input form-input-textarea"></textarea>
+                                <input type="text" name="hiddenField" style="display: none;">
+                                <input type="text" name="name" placeholder="Name" class="form-input form-input-name" required>
+                                <input type="email" name="email" placeholder="Email" class="form-input" required>
+                                <textarea name="message" placeholder="Message" class="form-input form-input-textarea" required></textarea>
                             </div>
                             <button type="submit" class="contact-button">Submit</button>
                         </form>
+                        <div id="form-message" style="display: none; margin-top: 10px; color: green;">Your message has been sent successfully!</div>
                     </div>
                     <p>Copyright 2024, Designed and coded by Rin</p>
                 <p class="credits" data-tooltip="Icons created by riajulislam, pixel-perfect, freepik, yumminky from flaticon.com">Credits</p>
@@ -257,8 +259,6 @@
                 textarea.style.height = textarea.scrollHeight + "px";
             }
         });
-
-
     </script>     
 </body>
 </html>
