@@ -259,28 +259,34 @@
             }
         });
 
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
             event.preventDefault(); 
             
-            const form = event.target;
+            const formData = new FormData(this);
             
-            fetch(form.action, {
-                method: form.method,
-                body: new FormData(form),
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    document.getElementById('formMessage').style.display = 'block';
+            fetch('https://formspree.io/f/xgverzyr', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.status === 403) {
                     
-                    form.reset();
+                    alert('Message sent successfully!');
+                } else if (response.ok) {
+                    
+                    alert('Message sent successfully!');
                 } else {
-                    alert("Failed to send message. Please try again.");
+                    
+                    alert('Failed to send message. Please try again.');
                 }
-            }).catch(error => {
-                console.error('Error:', error);
-                alert("An error occurred. Please try again.");
+            })
+            .catch(error => {
+                
+                alert('Error sending message.');
+            })
+            .finally(() => {
+                
+                document.querySelector('.contact-form').reset();
             });
         });
     </script>     
