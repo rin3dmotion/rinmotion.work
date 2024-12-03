@@ -697,7 +697,11 @@ img {
 .contact-links {
     display: flex;
     flex-direction: column;
-    gap: 55px;
+    gap: 22px;
+}
+
+.contact-links p {
+    width: 100%;
 }
 
 .contact-links img {
