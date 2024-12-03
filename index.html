@@ -17,7 +17,7 @@
         <header class="block-nav">
             <nav class="content-nav">
                 <div class="nav-left">
-                    <div class="contact-email-link">rin3dmotion@gmail.com</div>
+                    <a href="https://rin3dmotion.com" class="contact-email-link">rin3dmotion@gmail.com</a>
                 </div>
                 <div class="nav-right">
                     <a href="#about">About</a>
@@ -209,15 +209,15 @@
                             </div>
                             
                         </div>
-                        <form action="https://formspree.io/f/xgverzyr" method="POST" class="contact-form" id="contactForm">
+                        <form action="https://formspree.io/f/xgverzyr" method="POST" class="contact-form">
                             <div>
-                                <input type="text" name="name" placeholder="Name" class="form-input form-input-name">
-                                <input type="email" name="email" placeholder="Email" class="form-input">
-                                <textarea name="message" placeholder="Message" class="form-input form-input-textarea"></textarea>
+                                <input type="text" name="hiddenField" style="display: none;">
+                                <input type="text" name="name" placeholder="Name" class="form-input form-input-name" required>
+                                <input type="email" name="email" placeholder="Email" class="form-input" required>
+                                <textarea name="message" placeholder="Message" class="form-input form-input-textarea" required></textarea>
                             </div>
                             <button type="submit" class="contact-button">Submit</button>
                         </form>
-                        <p id="formMessage" style="display: none;">Message sent successfully!</p>
                     </div>
                     <p>Copyright 2024, Designed and coded by Rin</p>
                 <p class="credits" data-tooltip="Icons created by riajulislam, pixel-perfect, freepik, yumminky from flaticon.com">Credits</p>
@@ -259,36 +259,12 @@
             }
         });
 
-        document.querySelector('.contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            
-            const formData = new FormData(this);
-            
-            fetch('https://formspree.io/f/xgverzyr', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => {
-                if (response.status === 403) {
-                    
-                    alert('Message sent successfully!');
-                } else if (response.ok) {
-                    
-                    alert('Message sent successfully!');
-                } else {
-                    
-                    alert('Failed to send message. Please try again.');
-                }
-            })
-            .catch(error => {
-                
-                alert('Error sending message.');
-            })
-            .finally(() => {
-                
-                document.querySelector('.contact-form').reset();
-            });
-        });
+        window.onbeforeunload = () => {
+            for(const form of document.getElementsByTagName('form')) {
+                form.reset();
+            }
+        }
+
     </script>     
 </body>
 </html>
