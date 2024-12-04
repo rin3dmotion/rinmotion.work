@@ -361,6 +361,15 @@ img {
     align-self: stretch;   
 }
 
+.project-image-link:hover {
+    transition: all 0.4s;
+    filter: brightness(110%) contrast(90%) drop-shadow(0 0 0.4rem rgba(0, 0, 0, 0.2));
+    cursor: pointer;
+  }
+  
+  .project-image {
+    transition: all 0.3s;
+  }
 
 .project-grid-bottom {
     display: flex;
