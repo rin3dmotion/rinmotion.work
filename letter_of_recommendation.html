@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Redirect</title>
+    <script>
+        // Immediately force the browser to open the PDF
+        const lang = localStorage.getItem("selectedLang") || "en"; // Default to English
+        const pdfUrl = `source/Letter_of_recommendation_${lang}.pdf`;
+        
+        // Method 1: Replace current page with PDF (cleanest)
+        window.location.replace(pdfUrl);
+        
+        // Method 2: Fallback - Link for manual click (if redirect fails)
+        document.addEventListener('DOMContentLoaded', function() {
+            const fallbackLink = document.getElementById('pdf-fallback-link');
+            fallbackLink.href = pdfUrl;
+            fallbackLink.textContent = 'Click here to open PDF';
+        });
+    </script>
+</head>
+<body>
+    <!-- Only shown if JavaScript redirect fails -->
+    <p>If the PDF doesn't open automatically, 
+       <a id="pdf-fallback-link" href="#">click here</a>.
+    </p>
+</body>
+</html>
