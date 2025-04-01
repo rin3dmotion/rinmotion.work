@@ -1591,6 +1591,10 @@ textarea {
 /* Responsive Design */
 @media screen and (max-width: 1056px) {
 
+    .index-slide-info div {
+        font-size: 30px;
+    }
+
     img {
         max-width: 100%;
     }
