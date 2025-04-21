@@ -105,7 +105,31 @@ img {
 #body-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;   
+    /* min-height: 100vh; */
+}
+
+/* Mobile UI fix */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+#body-wrapper {
+    min-height: 100dvh;
+}
+
+.index-slider {
+    height: 100dvh;
+}
+
+.index-slide {
+    height: 100dvh;
+}
+
+.glightbox-container .ginner-container.desc-bottom {
+    height: 100dvh; /* Limits the height of gallery item container, so it doesn't exceed the taskbar */
 }
 
 /* Navigation */
@@ -1298,7 +1322,7 @@ textarea {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; 
+    /* height: 100vh; */
     overflow: hidden;
     z-index: 1; 
 }
@@ -1312,7 +1336,7 @@ textarea {
 .index-slide {
     position: relative;
     min-width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .index-slide {
