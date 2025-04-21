@@ -128,8 +128,10 @@ html, body {
     height: 100dvh;
 }
 
-.glightbox-container .ginner-container.desc-bottom {
-    height: 100dvh; /* Limits the height of gallery item container, so it doesn't exceed the taskbar */
+@media (max-width: 768px) {
+    .glightbox-container .ginner-container.desc-bottom {
+        height: 100dvh; /* Limits the height of gallery item container, so it doesn't exceed the taskbar */
+    }
 }
 
 /* Navigation */
