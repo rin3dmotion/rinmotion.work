@@ -86,6 +86,13 @@
     cursor: default;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
 body {
     font-family: "Ubuntu Sans", sans-serif;
     color: #333;
