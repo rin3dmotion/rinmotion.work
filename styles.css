@@ -115,6 +115,14 @@ img {
     min-height: 100dvh;   
 }
 
+.glightbox-container .ginner-container.desc-bottom {
+    height: 100dvh;
+}
+
+/* #glightbox-body {
+    height: 100dvh !important;
+} */
+
 /* Navigation */
 
 .email-link {
