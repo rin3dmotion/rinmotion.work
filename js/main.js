@@ -103,6 +103,43 @@ sliderContainer.addEventListener('wheel', (event) => {
     }
 });
 
+let touchStartX = null;
+let touchEndX = null;
+
+// Handle touch start event
+sliderContainer.addEventListener('touchstart', (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+});
+
+// Handle touch move event
+sliderContainer.addEventListener('touchmove', (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+});
+
+// Handle touch end event
+sliderContainer.addEventListener('touchend', () => {
+    if (touchStartX === null || touchEndX === null) {
+        return;
+    }
+
+    const deltaX = touchEndX - touchStartX;
+
+    if (deltaX > 50) { 
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateSlider();
+        }
+    } else if (deltaX < -50) { 
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            updateSlider();
+        }
+    }
+
+    touchStartX = null;
+    touchEndX = null;
+});
+
 // Toggle mobile menu on burger icon click
 document.addEventListener("DOMContentLoaded", function () {
     const burgerIcon = document.querySelector(".index-burger-menu");
