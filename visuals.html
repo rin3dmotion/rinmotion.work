@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="html-index">
+<html lang="en">
 <head>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EQY7TEXJVD"></script>
@@ -14,29 +14,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rin | 3D Motion Designer</title>
-    <meta name="description" content="Creating immersive 3D animations for brands. Focus on storytelling, details, and custom sound design. Let’s bring your identity to life.">
     <link rel="icon" href="img/icon/favicon.webp" type="image/png">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Mulish:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=block" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Mulish:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
-<body class="bodyindex">
-    <div id="body-wrapper">
+<body>
+    <div>
         
         <!-- Navigation -->
-        <header class="block-nav index-block-nav">
+        <header class="block-nav index-block-nav works-block-nav">
             <nav class="content-nav index-content-nav">
                 <div class="nav-left">
                     <a href="/" class="nav-home index-nav-home">rin 3d motion</a>
                 </div>
                 <div class="nav-right">
                     <div class="nav-menu index-nav-menu">
-                        <a href="/works" data-lang="Works">3D Works</a>
+                        <a href="/works" data-lang="Works">Works</a>
                         <a href="/visuals" data-lang="Visuals">AI Visuals</a>
                         <a href="/contact" data-lang="Contact">Contact</a>
                     </div>
@@ -66,8 +65,8 @@
                             </svg>
                         </div>
                         <div class="mobile-menu index-mobile-menu" id="mobile-menu">
-                            <a href="works.html" class="index-mobile-menu-a" data-lang="Works">Works</a>
-                            <a href="contact.html" class="index-mobile-menu-a" data-lang="Contact">Contact</a>
+                            <a href="works" class="index-mobile-menu-a" data-lang="Works">Works</a>
+                            <a href="contact" class="index-mobile-menu-a" data-lang="Contact">Contact</a>
                             <ul class="lang-switcher index-lang-switcher">
                                 <li><a href="#" class="is-active" data-lang="en">EN</a></li>
                                 <li class="lang-divider"></li>
@@ -80,58 +79,73 @@
         </header>
 
         <!-- Main Content -->
-
-            <section class="index-slider">
-                <div class="index-slides">
-                    <div class="index-slide" data-title="Bloody | G575" data-link="works/Bloody_G575">
-                        <div class="index-slide-darken"></div>
-                        <img src="img/Bloody_G575/Bloody_G575.webp" alt="Bloody | G575" class="index-slide-img" data-mobile-src="img/Bloody_G575/Bloody_G575-5.webp">
+        <section class="works">
+            <div class="works-list works-list-visuals">
+                <a href="visuals/LeLabo_Santal33.html" class="works-item">
+                    <div class="works-item-img-wrapper">
+                        <img src="img/AI/LeLabo_Santal33/LeLabo_Santal33_1.png" alt="Le Labo | Santal 33" class="works-item-img">
                     </div>
-                    <div class="index-slide" data-title="Ellis Brooklyn | Salt" data-link="works/EllisBrooklyn_Salt.html">
-                        <div class="index-slide-darken"></div>
-                        <img src="img/EllisBrooklyn_Salt/EllisBrooklyn_Salt.webp" alt="EllisBrooklyn | Salt" class="index-slide-img" data-mobile-src="img/EllisBrooklyn_Salt/EllisBrooklyn_Salt3.webp">
+                    <span class="works-item-alt">Le Labo | Santal 33</span>
+                </a>
+                
+                <a href="visuals/AugustinusBader_BodyCream.html" class="works-item">
+                    <div class="works-item-img-wrapper">
+                        <img src="img/AI/AugustinusBader_BodyCream/AugustinusBader_BodyCream_1.png" alt="AugustinusBader | BodyCream" class="works-item-img">
                     </div>
-                    <div class="index-slide" data-title="Wizense | Geo" data-link="works/Wizense_Geo">
-                        <div class="index-slide-darken"></div>
-                        <img src="img/Wizense_Geo/Wizense_Geo-1.webp" alt="Wizense | Geo" class="index-slide-img" data-mobile-src="img/Wizense_Geo/Wizense_Geo-5.webp">
+                    <span class="works-item-alt">Augustinus Bader | Body Cream</span>
+                </a>
+                
+                <a href="visuals/" class="works-item">
+                    <div class="works-item-img-wrapper">
+                        <img src="img/AI/MariaNila_SoothingSerum/MariaNila_SoothingSerum_1.png" alt="Maria Nila | Soothing Serum" class="works-item-img">
                     </div>
-                    <div class="index-slide" data-title="AI Visuals" data-link="visuals">
-                        <div class="index-slide-darken"></div>
-                        <img src="img/photos/aiCollage.png" alt="AI Collage" class="index-slide-img" data-mobile-src="img/photos/aiCollage.png">
+                    <span class="works-item-alt">Maria Nila | Soothing Serum</span>
+                </a>
+                
+                <a href="visuals/" class="works-item">
+                    <div class="works-item-img-wrapper">
+                        <img src="img/AI/RevolutionBeauty_GlossStick/RevolutionBeauty_GlossStick_1.png" alt="Revolution Beauty | Gloss Stick" class="works-item-img">
                     </div>
-                </div>
-        
-                <button class="index-btn index-btn-prev">&#10094;</button>
-                <button class="index-btn index-btn-next">&#10095;</button>
-        
-                <div class="index-dots"></div>
-            </section>
-
-        
+                    <span class="works-item-alt">Revolution Beauty | Gloss Stick</span>
+                </a>     
+                
+                <a href="visuals/" class="works-item">
+                    <div class="works-item-img-wrapper">
+                        <img src="img/AI/KVD_TattooLiner/KVD_TattooLiner_1.png" alt="KVD | Tattoo Liner" class="works-item-img">
+                    </div>
+                    <span class="works-item-alt">KVD | Tattoo Liner</span>
+                </a>                  
+            </div>
+        </section>
+           
     </div>
-    <script>       
-            // Object with translations for English and Russian
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Translations for language switcher
             const translations = {
                 en: {
                     Works: "3D Works",
                     Visuals: "AI Visuals",
-                    Contact: "Contact",
+                    Contact: "Contact",                    
                     Allrightsreserved: "2025 Rin. All rights reserved.",
                     ViewMore: "View More"
                 },
                 ru: {
                     Works: "3D Проекты",
                     Visuals: "ИИ Визуал",
-                    Contact: "Контакты",
+                    Contact: "Контакты",                    
                     Allrightsreserved: "2025 Rin. Все права защищены.",
                     ViewMore: "Узнать Больше"
                 }
             };
 
             function setLanguage(lang) {
+                // Save selected language in localStorage
                 localStorage.setItem("selectedLang", lang);
 
-                // Важно: ищем элементы ПРИ КАЖДОМ вызове функции
+                // Update all text elements based on selected language
                 document.querySelectorAll("[data-lang]").forEach((el) => {
                     const key = el.getAttribute("data-lang");
                     if (translations[lang][key]) {
@@ -139,27 +153,27 @@
                     }
                 });
 
+                // Highlight the active language in the switcher
                 document.querySelectorAll(".lang-switcher a").forEach((link) => {
                     link.classList.toggle("is-active", link.getAttribute("data-lang") === lang);
                 });
             }
 
-
-        document.addEventListener("DOMContentLoaded", function () {
-
-            // Add event listener to language switcher links
+            // Handle language switcher clicks
             document.querySelectorAll(".lang-switcher a").forEach((link) => {
                 link.addEventListener("click", function (e) {
-                    e.preventDefault(); // Prevent default link behavior
-                    setLanguage(this.getAttribute("data-lang")); // Change language
+                    e.preventDefault();
+                    setLanguage(this.getAttribute("data-lang"));
                 });
             });
 
-            // Set the initial language from localStorage or default to English
+            // Set initial language from localStorage or default to English
             setLanguage(localStorage.getItem("selectedLang") || "en");
         });
 
+
     </script>     
     <script src="js/main.js"></script>
+    <script src="js/work.js"></script>
 </body>
 </html>

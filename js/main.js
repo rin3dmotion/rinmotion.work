@@ -85,20 +85,44 @@ window.addEventListener('resize', updateImagesForMobile);
 updateImagesForMobile();
 updateSlider();
 
-// Handle wheel events for slider navigation
+// Handle wheel events for slider navigation with accumulation
 const sliderContainer = document.querySelector('.index-slider');
+
+// Добавляем переменные для отслеживания прокрутки
+let wheelTimeout = null;
+let wheelDelta = 0;
+const WHEEL_THRESHOLD = 150; // Порог для срабатывания прокрутки (можно настроить)
+
 sliderContainer.addEventListener('wheel', (event) => {
     event.preventDefault();
-
-    if (event.deltaY > 0) {
-        if (currentSlide < slides.length - 1) {
-            currentSlide++;
-            updateSlider();
-        }
-    } else if (event.deltaY < 0) {
-        if (currentSlide > 0) {
-            currentSlide--;
-            updateSlider();
+    
+    // Аккумулируем значение прокрутки
+    wheelDelta += Math.abs(event.deltaY);
+    
+    // Очищаем предыдущий таймаут
+    if (wheelTimeout) clearTimeout(wheelTimeout);
+    
+    // Устанавливаем новый таймаут для сброса аккумулятора
+    wheelTimeout = setTimeout(() => {
+        wheelDelta = 0;
+    }, 200); // Сбрасываем аккумулятор через 200мс
+    
+    // Проверяем, достигли ли порога прокрутки
+    if (wheelDelta >= WHEEL_THRESHOLD) {
+        // Сбрасываем аккумулятор
+        wheelDelta = 0;
+        
+        // Определяем направление прокрутки
+        if (event.deltaY > 0) {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlider();
+            }
+        } else if (event.deltaY < 0) {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlider();
+            }
         }
     }
 });

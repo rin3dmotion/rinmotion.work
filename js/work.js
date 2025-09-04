@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
             // Language switcher functionality
             const translations = {
                 en: {
-                    Works: "Works",
+                    Works: "3D Works",
+                    Visuals: "AI Visuals",
                     Contact: "Contact",
                     WizenseGeo: "<strong>Geo by Wizens — a device for telecom specialists, enhancing measurement precision. My goal was to create a 3D animation that transforms technical specs — from waterproofing to tilt compensation — into a clear visual language, making complexity intuitive even for non-experts. </strong> <br><br>Showcase all features without turning it into a manual. I broke the device into core components: data display, top module, camera demonstration, water resistance, tilt compensation — and synchronized them into a cohesive rhythm. The soundtrack isn’t just background noise; its accents align with feature transitions. <br><br><strong>What’s the result?</strong><br>A versatile animation: horizontal for websites/presentations, vertical for social media. Used in 3+ campaigns, the real win is how a simple feature list transforms into a mood-driven narrative that sticks with the audience.",
                     EllisBrooklynSalt: "<strong>The fragrance Salt by Ellis Brooklyn inspired me to create a 3D animation where the warmth of the seaside and the freshness of the salty breeze transformed into a dynamic visual language.</strong><br><br>I immersed myself in the brand’s philosophy to create a style that complements the product rather than competes with it. The texture of the bottle, soft highlights of warm light, the animation of moving stones, and even the soundscape with the whisper of waves — all of this created the atmosphere of a warm beach. <br><br><strong>What’s the result?</strong><br>Through the animation, I didn’t just tell a story about the fragrance — I allowed viewers to feel it. The project resonated with the audience, but its true value lies in becoming a standalone visual story where Salt’s elegance unfolds through the rhythm of waves and the play of light.",                    
@@ -18,13 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     Designer1: "3D Designer:",
                     ArtDirector2: "Art Director, 3D Motion Designer:",
                     ArtDirector3: "Art Director, 3D Motion Designer, Sound Designer:",
+                    Promter: "AI Promter:",
                     Composer: "Composer:",
                     Tools: "Tools:",
                     MoreWorks: "More Works",
                     Allrightsreserved: "2025 Rin. All rights reserved."
                 },
                 ru: {
-                    Works: "Портфолио",
+                    Works: "3D Проекты",
+                    Visuals: "ИИ Визуал",
                     Contact: "Контакты",
                     WizenseGeo: "<strong>Geo от Wizens - прибор для специалистов в области телекоммуникаций, повышающий точность измерений. Моей задачей было создать 3D-анимацию, которая превратит технические характеристики — от влагозащиты до компенсации наклона — в понятный язык, где все выглядит логичным даже для новичка.</strong> <br><br>Сложность была в балансе: показать все характеристики устройства, не превратив анимацию в техническую инструкцию. Я разбила устройство на основные компоненты: дисплей с данными, верхний модуль, демонстрация камеры, водонепроницаемость, компенсация наклона — и синхронизировала их в единый ритм. Даже саундтрек здесь не просто фон — его акценты синхронизированы с переходами между демонстрацией функций.  <br><br><strong>Что вышло в итоге? </strong><br>Анимация стала универсальным инструментом: горизонтальный формат — для сайта или презентаций, вертикальный — для соцсетей. Клиент использовал её в 3+ кампаниях, но важнее другое — мне удалось показать, как из простого перечисления функционала можно создать настоящую историю со своим настроением.",
                     EllisBrooklynSalt: "<strong>Аромат Salt от Ellis Brooklyn вдохновил меня на создание 3D-анимации, где его теплота морского побережья и свежесть соленого бриза превратились в динамичный визуальный язык.</strong><br><br>Я погрузилась в философию бренда, чтобы создать стиль, не конкурирующий с продуктом, а дополняющий его. Текстура флакона, мягкие блики теплого света, анимация движения камней и даже звуковое сопровождение с шепотом волн — всё это создало атмосферу теплого пляжа. <br><br> <strong>Что вышло в итоге?</strong><br>С помощью анимации я не просто рассказала об аромате, а позволила его почувствовать. Проект нашёл отклик у аудитории, но его главная ценность — в том, что он стал самостоятельной визуальной историей, где элегантность Salt раскрывается через ритм волн и игру света.",
@@ -41,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     Designer1: "3D Дизайнер:",
                     ArtDirector2: "Арт Директор, 3D Моушн Дизайнер:",
                     ArtDirector3: "Арт Директор, 3D Моушн Дизайнер, Саунд Дизайнер:",
+                    Promter: "ИИ Промтер:",
                     Composer: "Композитор:",
                     Tools: "Инструменты:",
                     MoreWorks: "Другие Проекты",
@@ -148,24 +152,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Handle navbar shadow effect based on scroll position
-    const navbar = document.querySelector(".work-block-nav");
-    if (navbar) {
-        function handleNavbarShadow() {
-            const isMobile = window.matchMedia("(max-width: 768px)").matches;
-            const scrollThreshold = isMobile ? 10 : 116;
+    // // Handle navbar shadow effect based on scroll position
+    // const navbar = document.querySelector(".index-block-nav");
+    // if (navbar) {
+    //     function handleNavbarShadow() {
+    //         const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    //         const scrollThreshold = isMobile ? 10 : 116;
 
-            if (window.scrollY > scrollThreshold) {
-                navbar.classList.add("shadow");
-            } else {
-                navbar.classList.remove("shadow");
-            }
-        }
+    //         if (window.scrollY > scrollThreshold) {
+    //             navbar.classList.add("shadow");
+    //         } else {
+    //             navbar.classList.remove("shadow");
+    //         }
+    //     }
 
-        window.addEventListener("scroll", handleNavbarShadow);
-        handleNavbarShadow();
-        window.addEventListener("resize", handleNavbarShadow);
-    }
+    //     window.addEventListener("scroll", handleNavbarShadow);
+    //     handleNavbarShadow();
+    //     window.addEventListener("resize", handleNavbarShadow);
+    // }
 
     // Toggle mobile menu on burger icon click
     const burgerIcon = document.querySelector(".burger-menu svg");
