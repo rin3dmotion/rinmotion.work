@@ -199,63 +199,74 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-// Horizontal scrolling for "More Works" section
-const moreWorkGallery = document.querySelector('.more-work-gallery');
-const moreWorkPrevBtn = document.querySelector('.more-work-prev');
-const moreWorkNextBtn = document.querySelector('.more-work-next');
 
-if (moreWorkGallery && moreWorkPrevBtn && moreWorkNextBtn) {
-    // Click handlers for buttons
-    moreWorkPrevBtn.addEventListener('click', () => {
-        moreWorkGallery.scrollBy({ left: -moreWorkGallery.offsetWidth * 0.5, behavior: 'smooth' });
-    });
-
-    moreWorkNextBtn.addEventListener('click', () => {
-        moreWorkGallery.scrollBy({ left: moreWorkGallery.offsetWidth * 0.5, behavior: 'smooth' });
-    });
-
-    // Scroll handler for wheel events
-    let isScrolling = false;
-    const scrollDelay = 200; // Delay in milliseconds (0.2 seconds)
-    const scrollStep = 300; // Scroll distance per wheel event
-
-    moreWorkGallery.addEventListener('wheel', function (event) {
-        event.preventDefault(); // Prevent default vertical scrolling
-
-        if (isScrolling) return; // Prevent multiple scroll triggers
-        isScrolling = true;
-
-        // Determine scroll direction
-        const delta = Math.sign(event.deltaY); // 1 (down) or -1 (up)
-
-        // Scroll horizontally based on wheel direction
-        if (delta > 0) {
-            moreWorkGallery.scrollBy({ left: scrollStep, behavior: 'smooth' }); // Scroll right
-        } else if (delta < 0) {
-            moreWorkGallery.scrollBy({ left: -scrollStep, behavior: 'smooth' }); // Scroll left
-        }
-
-        // Reset the scrolling flag after the delay
-        setTimeout(() => {
-            isScrolling = false;
-        }, scrollDelay);
-    });
-
-    // Click handler for gallery items
-    const galleryItems = document.querySelectorAll('.more-work-gallery-item');
-    galleryItems.forEach(item => {
-        item.addEventListener('click', () => {
-            const href = item.getAttribute('data-href');
-            if (href) {
-                window.location.href = href;
-            }
-        });
-    });
-} else {
-    console.error("One or more elements for the 'More Works' gallery were not found.");
-}
 });
 
+// Загрузка галереи
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('../gallery-template.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('gallery-container').innerHTML = data;
+            initGallery(); // Инициализируйте функционал галереи после загрузки
+        })
+        .catch(error => console.error('Error loading gallery:', error));
+});
 
+// Функция для инициализации галереи
+function initGallery() {
+    // Весь ваш код для галереи должен быть здесь!
+    const moreWorkGallery = document.querySelector('.more-work-gallery');
+    const moreWorkPrevBtn = document.querySelector('.more-work-prev');
+    const moreWorkNextBtn = document.querySelector('.more-work-next');
+
+    if (moreWorkGallery && moreWorkPrevBtn && moreWorkNextBtn) {
+        // Click handlers for buttons
+        moreWorkPrevBtn.addEventListener('click', () => {
+            moreWorkGallery.scrollBy({ left: -moreWorkGallery.offsetWidth * 0.5, behavior: 'smooth' });
+        });
+
+        moreWorkNextBtn.addEventListener('click', () => {
+            moreWorkGallery.scrollBy({ left: moreWorkGallery.offsetWidth * 0.5, behavior: 'smooth' });
+        });
+
+        // Scroll handler for wheel events
+        let isScrolling = false;
+        const scrollDelay = 200;
+        const scrollStep = 300;
+
+        moreWorkGallery.addEventListener('wheel', function (event) {
+            event.preventDefault();
+
+            if (isScrolling) return;
+            isScrolling = true;
+
+            const delta = Math.sign(event.deltaY);
+
+            if (delta > 0) {
+                moreWorkGallery.scrollBy({ left: scrollStep, behavior: 'smooth' });
+            } else if (delta < 0) {
+                moreWorkGallery.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+            }
+
+            setTimeout(() => {
+                isScrolling = false;
+            }, scrollDelay);
+        });
+
+        // Click handler for gallery items
+        const galleryItems = document.querySelectorAll('.more-work-gallery-item');
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const href = item.getAttribute('data-href');
+                if (href) {
+                    window.location.href = href;
+                }
+            });
+        });
+    } else {
+        console.error("Gallery elements not found");
+    }
+}
 
 
