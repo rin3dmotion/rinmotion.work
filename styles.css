@@ -1177,6 +1177,8 @@ textarea {
     opacity: 0;
     transition: opacity 0.1s;
     cursor: pointer;
+    text-align: center;
+    padding: 10px;
 }
 
 .more-work-gallery-item:hover .more-work-overlay {
