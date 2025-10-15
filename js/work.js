@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Language switcher functionality
             const translations = {
                 en: {
-                    Works: "3D Works",
+                    Works: "Works",
                     Visuals: "AI Visuals",
                     Contact: "Contact",
                     WizenseGeo: "<strong>Geo by Wizens — a device for telecom specialists, enhancing measurement precision. My goal was to create a 3D animation that transforms technical specs — from waterproofing to tilt compensation — into a clear visual language, making complexity intuitive even for non-experts. </strong> <br><br>Showcase all features without turning it into a manual. I broke the device into core components: data display, top module, camera demonstration, water resistance, tilt compensation — and synchronized them into a cohesive rhythm. The soundtrack isn’t just background noise; its accents align with feature transitions. <br><br><strong>What’s the result?</strong><br>A versatile animation: horizontal for websites/presentations, vertical for social media. Used in 3+ campaigns, the real win is how a simple feature list transforms into a mood-driven narrative that sticks with the audience.",

@@ -183,7 +183,7 @@ html, body {
 .nav-right, .nav-right .nav-menu, .nav-social {
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 35px;
     align-items: center;
 }
 
