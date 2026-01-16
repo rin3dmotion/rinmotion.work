@@ -244,7 +244,7 @@ html, body {
 .content {
     display: flex;
     flex-direction: column;
-    max-width: 1125px;
+    max-width: 1250px;
     align-self: center;
 }
 
@@ -1270,7 +1270,7 @@ textarea {
 
 .work-page-footer {
     align-self: center;
-    width: 1125px;
+    width: 1250px;
     padding: 0px;
 }
 
@@ -1615,6 +1615,7 @@ textarea {
 
 .ginner-container {
     padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 /* .works-list-visuals {
