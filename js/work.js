@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     Composer: "Composer:",
                     Tools: "Tools:",
                     MoreWorks: "More Works",
-                    Allrightsreserved: "2025 Rin. All rights reserved."
+                    Allrightsreserved: "2026 Rin. All rights reserved."
                 },
                 ru: {
                     Works: "Проекты",
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     Composer: "Композитор:",
                     Tools: "Инструменты:",
                     MoreWorks: "Другие Проекты",
-                    Allrightsreserved: "2025 Rin. Все права защищены."
+                    Allrightsreserved: "2026 Rin. Все права защищены."
                 }
             };
     
